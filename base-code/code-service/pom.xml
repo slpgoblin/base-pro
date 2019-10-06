@@ -33,11 +33,11 @@
 
         <dependency>
             <groupId>com.goblin</groupId>
-            <artifactId>base-api</artifactId>
+            <artifactId>code-api</artifactId>
         </dependency>
         <dependency>
             <groupId>com.goblin</groupId>
-            <artifactId>base-basic</artifactId>
+            <artifactId>code-basic</artifactId>
         </dependency>
     </dependencies>
 

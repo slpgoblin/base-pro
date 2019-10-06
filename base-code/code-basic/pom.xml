@@ -33,7 +33,7 @@
 
         <dependency>
             <groupId>com.goblin</groupId>
-            <artifactId>base-common</artifactId>
+            <artifactId>code-common</artifactId>
         </dependency>
 
         <dependency>

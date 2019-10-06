@@ -51,22 +51,22 @@
             <!--子模块-->
             <dependency>
                 <groupId>com.goblin</groupId>
-                <artifactId>base-api</artifactId>
+                <artifactId>code-api</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.goblin</groupId>
-                <artifactId>base-basic</artifactId>
+                <artifactId>code-basic</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.goblin</groupId>
-                <artifactId>base-common</artifactId>
+                <artifactId>code-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.goblin</groupId>
-                <artifactId>base-service</artifactId>
+                <artifactId>code-service</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>

@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
-@MapperScan("com.goblin.base.dao")
+@MapperScan("com.goblin.code.dao")
 @ServletComponentScan
 @EnableScheduling
 @EnableAsync

@@ -33,7 +33,7 @@
 
         <dependency>
             <groupId>com.goblin</groupId>
-            <artifactId>base-service</artifactId>
+            <artifactId>code-service</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
