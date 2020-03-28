@@ -5,6 +5,8 @@
 
 <generatorConfiguration>
 
+    <properties resource="generator/tkconfig.properties"/>
+
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
@@ -15,22 +17,23 @@
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
             <property name="caseSensitive" value="true"/>
+            <property name="lombok" value="Data"/>
         </plugin>
 
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1/goblin?serverTimezone=UTC"
-                        userId="root"
-                        password="root">
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.goblin.code.entity" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.goblin.code.basic.dataobject" targetProject="src/main/java"/>
 
-        <sqlMapGenerator targetPackage="com.goblin.code.dao" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="com.goblin.code.basic.dao" targetProject="src/main/java"/>
 
-        <javaClientGenerator targetPackage="com.goblin.code.dao" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.goblin.code.basic.dao" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
-        <table tableName="test" domainObjectName="TestDO" mapperName="TestMapper">
+        <table tableName="${tableName}" domainObjectName="${dataObjectName}" mapperName="${mapperName}">
             <!--mysql 配置-->
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
             <!--oracle 配置-->

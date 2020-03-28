@@ -32,9 +32,17 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
-#  tk.mybatis
+#tk.mybatis
 mapper:
-  order: after
-mybatis:
-  mapper-locations: classpath:mapper/**/**.xml
-  type-aliases-package: classpath:com.goblin.**.entity
+  identity: MYSQL
+  # 主键生成在插入数据之后
+  before: false
+  # Selective是否判断空串
+  not-empty: true
+  # 数据表和实体转换，大小写转驼峰
+  style: camelhump
+  # 开启方法注解
+  enable-method-annotation: true
+  # 开启安全操作
+  safe-delete: true
+  safe-update: true

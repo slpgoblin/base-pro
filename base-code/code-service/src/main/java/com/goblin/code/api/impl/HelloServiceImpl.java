@@ -1,8 +1,10 @@
 package com.goblin.code.api.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.goblin.code.api.HelloService;
-import com.goblin.code.dao.TestMapperEx;
-import com.goblin.code.entity.TestDO;
+import com.goblin.code.basic.dao.TestMapper;
+import com.goblin.code.basic.dataobject.TestDO;
+import com.goblin.code.bo.TestBO;
 import com.goblin.code.dto.TestDTO;
 import com.google.common.collect.Lists;
 import org.springframework.stereotype.Service;
@@ -21,28 +23,30 @@ import java.util.List;
 public class HelloServiceImpl implements HelloService {
 
     @Resource
-    private TestMapperEx testMapperEx;
-
+    private TestMapper testMapper;
     /**
-     * 根据id获取数据
+     * 根据id或name获取数据
      *
-     * @param id id
+     * @param testDTO testDTO
      * @return
      */
     @Override
-    public List<TestDTO> listTestData(String id) {
+    public List<TestBO> listTestData(TestDTO testDTO) {
         Example example = new Example(TestDO.class);
-        example.createCriteria().andEqualTo("id",id);
-        List<TestDO> testDOList = testMapperEx.selectByExample(example);
-        List<TestDTO> testDTOS = Lists.newArrayList();
-        testDOList.forEach(testDO -> testDTOS.add(transDto(testDO)));
-        return testDTOS;
+        example.createCriteria().andEqualTo("id",testDTO.getId()).orEqualTo("name",testDTO.getName());
+        List<TestDO> testDOList = testMapper.selectByExample(example);
+        List<TestBO> testBOList = Lists.newArrayList();
+        testDOList.forEach(testDO -> testBOList.add(transBo(testDO)));
+        return testBOList;
     }
 
-    private TestDTO transDto(TestDO testDO){
+    private TestBO transBo(TestDO testDO){
         if (testDO == null){
             return null;
         }
-        return TestDTO.builder().id(testDO.getId()).age(testDO.getAge()).name(testDO.getName()).sex(testDO.getSex()).build();
+        TestBO testBO = new TestBO();
+        BeanUtil.copyProperties(testDO,testBO);
+        return testBO;
     }
+
 }

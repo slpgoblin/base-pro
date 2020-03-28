@@ -35,6 +35,13 @@
             <groupId>com.goblin</groupId>
             <artifactId>code-common</artifactId>
         </dependency>
+        <!--编译时生效，需要额外添加-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <!--这里标识只在编译和测试的时候使用：lombok插件用于编译期间-->
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>tk.mybatis</groupId>

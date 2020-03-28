@@ -1,11 +1,6 @@
 package com.goblin.code.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-import java.io.Serializable;
+import lombok.*;
 
 /**
  * @program: base-code
@@ -17,15 +12,12 @@ import java.io.Serializable;
 @Getter
 @ToString
 @Builder
-public class TestDTO implements Serializable {
-
-    private static final long serialVersionUID = 4796825355432970888L;
+@NoArgsConstructor
+@AllArgsConstructor
+public class TestDTO {
 
     private String id;
 
     private String name;
 
-    private Byte sex;
-
-    private Integer age;
 }

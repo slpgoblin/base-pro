@@ -1,13 +1,17 @@
-package com.goblin.code.controller;
+package com.goblin.code.web.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.json.JSONUtil;
 import com.goblin.code.api.HelloService;
+import com.goblin.code.dto.TestDTO;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Objects;
 
 /**
  * @program: base-code
@@ -27,10 +31,10 @@ public class HelloController {
         return "hello " + (StringUtils.isNotBlank(name) ? name : "goblin");
     }
 
-    @GetMapping("/data")
-    public String data(String id){
-        if (StringUtils.isNotBlank(id)){
-            return JSONUtil.toJsonStr(helloService.listTestData(id));
+    @GetMapping(value = "/data")
+    public String data(TestDTO testDTO){
+        if (ObjectUtil.isNotEmpty(testDTO)){
+            return JSONUtil.toJsonStr(helloService.listTestData(testDTO));
         }else {
             return "123";
         }

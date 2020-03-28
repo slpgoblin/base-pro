@@ -1,5 +1,6 @@
 package com.goblin.code.api;
 
+import com.goblin.code.bo.TestBO;
 import com.goblin.code.dto.TestDTO;
 
 import java.util.List;
@@ -13,10 +14,10 @@ import java.util.List;
 public interface HelloService {
 
     /**
-     * 根据id获取数据
-     * @param id id
+     * 根据dto获取数据
+     * @param testDTO testDTO
      * @return
      */
-    List<TestDTO> listTestData(String id);
+    List<TestBO> listTestData(TestDTO testDTO);
 
 }

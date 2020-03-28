@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.goblin.code.dao.TestMapper">
-  <resultMap id="BaseResultMap" type="com.goblin.code.entity.TestDO">
+<mapper namespace="com.goblin.code.basic.dao.TestMapper">
+  <resultMap id="BaseResultMap" type="com.goblin.code.basic.dataobject.TestDO">
     <!--
       WARNING - @mbg.generated
     -->

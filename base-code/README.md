@@ -1,3 +1,6 @@
+# 单项目后端架构
+    适用于小项目
+
 ## 模块说明
 * code-api:接口
 * code-basic:基础模块,数据中心
@@ -6,6 +9,12 @@
 * code-common:公共类，工具类等
 * code-web:HTTP接口服务
 * sql-file:存放sql脚本
+
+## POJO
+* DO:实体类
+* DTO:数据传输对象。web->Controller->Service
+* BO:业务层对象。service->Controller
+* VO:显示层对象。controller->web
 
 ---
 
